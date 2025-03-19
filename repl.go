@@ -5,12 +5,14 @@ import (
 	"fmt"
 	"os"
 	"strings"
+
+	"github.com/brodingo/pokedexcli/internal/pokeapi"
 )
 
 type cliCommand struct {
 	name        string
 	description string
-	callback    func() error
+	callback    func(*config) error
 }
 
 func getCommands() map[string]cliCommand {
@@ -28,7 +30,13 @@ func getCommands() map[string]cliCommand {
 	}
 }
 
-func startRepl() {
+type config struct {
+	pokeapiClient    pokeapi.Client
+	nextLocationsURL *string
+	prevLocationsURL *string
+}
+
+func startRepl(cfg *config) {
 	// Scanner for user input
 	scanner := bufio.NewScanner(os.Stdin)
 	for {
@@ -46,7 +54,7 @@ func startRepl() {
 
 		command, exists := getCommands()[commandName]
 		if exists {
-			err := command.callback()
+			err := command.callback(cfg)
 			if err != nil {
 				fmt.Println(err)
 			}
