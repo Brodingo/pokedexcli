@@ -58,6 +58,9 @@ func startRepl(cfg *config) {
 		input := scanner.Text()
 		// Clean user input
 		words := cleanInput(input)
+		if len(words) == 0 {
+			continue
+		}
 		// Store the first word of the input
 		commandName := words[0]
 		// args := words[1:]
