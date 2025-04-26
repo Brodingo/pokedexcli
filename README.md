@@ -7,4 +7,5 @@ A command line Pokedex written in Go for the [Boot.dev](https://boot.dev) course
 
 ## Commands
 `help` to see a list of commands
+
 `map` to see a list of locations to explore
