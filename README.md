@@ -8,4 +8,7 @@ A command line Pokedex written in Go for the [Boot.dev](https://boot.dev) course
 ## Commands
 `help` to see a list of commands
 
-`map` to see a list of locations to explore
+`map` to see a list of locations to explore, or go to next page of results
+
+`mapb` go back a page of location results
+
