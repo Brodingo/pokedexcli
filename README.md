@@ -13,3 +13,5 @@ A command line Pokedex written in Go for the [Boot.dev](https://boot.dev) course
 `mapb` go back a page of location results
 
 `explore <location>` show a list of pokemon at the location
+
+`catch <pokemon>` attempt to catch a pokemon from the location
